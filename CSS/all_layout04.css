@@ -1,0 +1,20 @@
+.popUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popUp button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    /*inline은 가로가 안먹히지만 먹혔고, 글자가 가운데정렬*/
+    width: 120px;
+    height: 60px;
+    border: none;
+    background: #f00;
+    color: #fff;
+    cursor: pointer;
+}
