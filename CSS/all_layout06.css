@@ -30,16 +30,25 @@
     letter-spacing: -0.025em;
 }
 
-.topBanner .container a {
+/*.topBanner .container a {
     display: inline-block;
     height: 16px;
     line-height: 12px;
     margin-left: 20px;
     padding: 0 20px;
-    border: 1px solid #333; /*축약형으로 사이즈 스타일 스타일값*/
+    border: 1px solid #333; : 축약형으로 사이즈 스타일 스타일값
     font-size: 13px;
     font-weight: 300;
     text-transform: uppercase;
+} */
+
+.topBanner .container a {
+    margin-left: 20px;
+    padding: 3px 20px;
+    border: 1px solid #333;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase; /* uppercase : 대문자 */
 }
 
 
@@ -86,7 +95,7 @@
     padding: 0 20px;
 }
 
-.gnb ul li~li::after { /* ~ : 앞에오는 li자신을 빼고 적용하라 */
+.gnb ul li~li::after { /* ~ : 앞에오는 li자신을 뺀 나머지 형제들 */
     content: "";
     position: absolute;
     top: 50%; /* 부모로부터 가운데로 이동 */
@@ -111,7 +120,8 @@
 }
 
 .headerWrap .searchform input[type="search"]::placeholder {
-    color: rgb(48, 107, 61);
+    color: #999;
+    font-size: 14px;
 }
 
 .headerWrap .searchform input[type="search"]:focus::placeholder {
@@ -132,19 +142,71 @@
     border-radius: 50%;
 }
 
+
+
 .mainVisual .visualSlide {
     border-top: 1px solid #ddd;
 }
 
 
 .mainVisual .visualSlide figure {
+    position: relative;
     height: 600px;
     /* background-repeat: no-repeat; 반복하지 말아라 */
 }
 
+.mainVisual .visualSlide figure i {
+    position: absolute;
+    top: 20px;
+    right: 100px;
 
-.mainVisual .visualSlide figure.slick-active {
+    font-size: 70px;
+    color: #f00;
 
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.mainVisual .visualSlide figure.oo i {
+    opacity: 1;
+    animation: heart 1s infinite;
+}
+
+@keyframes heart {
+    0% {transform: scale(1);}
+    20% {transform: scale(0.5);}
+    50% {transform: scale(1);}
+    70% {transform: scale(0.5);}
+    100% {transform: scale(1);}
+}
+
+.mainVisual .visualSlide .msLeft {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    z-index: 999;
+
+    border-top: 50px solid #fff;
+    border-left: 50px solid transparent;
+
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.mainVisual .visualSlide .msLeft.oo {
+    border-top: 100px solid #333;
+}
+
+.mainVisual .visualSlide .msRight {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    width: 75px;
+    height: 55px;
+
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+
+    transform: translateY(-50%) rotate(135deg) rotateY(45deg);
 }
 
 .mainVisual .visualSlide figure .inner {
@@ -152,6 +214,11 @@
     margin: 300px auto 0 auto;
     padding: 0 15px;
     color: #fff;
+}
+
+
+.mainVisual .visualSlide figure.item02 .inner {
+    color: #333;
 }
 
 .mainVisual .visualSlide figure .inner h3 {
@@ -172,19 +239,16 @@
     transition: 1s 1s; /* 뒤에 붙는 초는 1초 뒤에 나와라는 뜻 */
 }
 
-.mainVisual .visualSlide .item02 .inner p {
-    color: rgb(192, 192, 192);
-}
-
-.mainVisual .visualSlide figure.slick-active .inner h3{
+.mainVisual .visualSlide figure.oo .inner h3 {
     opacity: 1;
     transform: translateY(0);
 }
 
-.mainVisual .visualSlide figure.slick-active .inner p{
+.mainVisual .visualSlide figure.oo .inner p {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 .mainVisual .visualSlide .item01 {
     background: url(../images/mainvisual01.jpg) no-repeat center center/cover;
@@ -272,7 +336,7 @@
 
 .mainProduct .container figure strong {
     display: block;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
 .mainProduct .container figure a {
@@ -323,22 +387,22 @@
 
 .eventBanner {
     padding: 100px 0;
-    background: url(../images/mainvisual03.jpg) no-repeat center/cover;
+    background: url(../images/mainvisual03.jpg) no-repeat fixed center/cover;
     text-align: center;
     color: #fff;
     filter: grayscale(1);
 }
 
 .eventBanner h2 {
-    font-size: 19px;
-    font-weight: 100;
+    font-size: 35px;
+    font-weight: 900;
     letter-spacing: 0.20em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .eventBanner p {
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: -0.025em;
     margin-bottom: 30px;
 }
@@ -361,32 +425,252 @@
 }
 
 .eventProduct .container>div {
-    width: 50%;
     padding: 0 15px;
+    text-align: center;
+}
+
+.eventProduct .left {
+    width: 40%;
+}
+
+.eventProduct .eProductSlide {
+    padding: 5px;
+    border: 5px solid #ddd;
 }
 
 .eventProduct .right {
     display: flex;
     align-items: center;
+    width: 60%;
 }
 
 .eventProduct h3 {
-    font-size: 19px;
-    font-weight: 100;
+    font-size: 21px;
+    font-weight: 300;
     letter-spacing: 0.20em;
     margin-bottom: 10px;
 }
 
 .eventProduct p {
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: -0.025em;
     margin-bottom: 30px;
 }
 
 .eventProduct i {
-    padding: 5px;
+    padding: 13px;
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.allProduct {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.allProduct h2 {
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    margin-bottom: 12px;
+}
+
+.allProduct p {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    margin-bottom: 30px;
+}
+
+.allProduct .container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.allProduct .aproductSlide figure {
+    padding: 0 15px;
+}
+
+.allProduct .inner {
+    margin-bottom: 20px;
+}
+
+.allProduct .inner + strong {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.allProduct .slick-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.allProduct .slick-dots li {
+    width: 13px;
+    height: 13px;
     background: #333;
     border-radius: 50%;
-    margin-left: 15px;
+}
+
+.allProduct .slick-dots li.slick-active {
+    background: #f00;
+}
+
+.allProduct .slick-dots li button {
+    display: none;
+}
+
+.allProduct i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: #333;
+}
+
+.allProduct i:first-child {
+    margin-left: -700px;
+}
+
+.allProduct i:last-child {
+    margin-left: 700px;
+}
+
+.movieBg {
+    height: 970px;
+    text-align: center;
+    color: #fff;
+}
+
+.movieBg h3 {
+    top: 400px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 0.20em;
+    opacity: 70%;
+}
+
+.movieBg p {
+    top: 400px;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.050em;
+    opacity: 70%;
+}
+
+.movieBg .btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    cursor: pointer;
+}
+
+.customerArea {
+    padding: 100px 0;
+    background: #f2f2f2;
+}
+
+.customerArea .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.customerArea .container>div {
+    position: relative;
+    flex: 1;
+    padding: 0 15px;
+}
+
+.customerArea .container>div .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: yellowgreen;
+    color: #fff;
+    border: 3px solid yellowgreen;
+    padding: 15px 30px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+
+.customerArea .container>div .btn:hover {
+    background: #fff;
+    color: yellowgreen;
+    border: 3px solid yellowgreen;
+    border-radius: 30px;
+    
+}
+
+.customerArea .container>div img {
+    filter: grayscale(1);
+    transition: 0.5s;
+}
+
+.customerArea .container>div img:hover {
+    filter: grayscale(0);
+}
+
+.customerArea .tabMenu {
+    display: flex;
+}
+
+.customerArea .tabMenu>li {
+    flex: 1;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.customerArea .tabMenu>li.xx {
+    background: #369;
+}
+
+.customerArea .tabMenu>li~li {
+    border-left: 1px solid #fff;
+}
+
+.customerArea .tabContent>div {
+    display: none;
+}
+
+.customerArea .tabContent>div.xx {
+    display: block;
+}
+
+.customerArea .tabContent a {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.customerArea .tabContent span {
+    float: right;
+}
+
+.customerArea .tabContent strong {
+    display: block;
+    width: 400px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
