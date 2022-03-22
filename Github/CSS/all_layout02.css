@@ -1,0 +1,65 @@
+/*important>java>css 스타일 적용 순서*/
+
+.mainVisual {
+    position: relative;
+}
+
+.mainVisual figure {
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+}
+
+.mainVisual .itm01 {
+    background-image: url(../img/망고튤립01.jpg);
+}
+.mainVisual .itm02 {
+    background-image: url(../img/망고튤립02.jpg);
+}
+.mainVisual .itm03 {
+    background-image: url(../img/망고튤립03.jpg);
+}
+
+.mainVisual .slick-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    transform: translate(-50%);
+}
+
+.mainVisual .slick-dots li {
+    background: #ff0;
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.mainVisual .slick-dots li.slick-active {
+    background: #444;
+}
+
+.mainVisual .slick-dots button {
+    display: none;
+}
+
+.mainVisual .slideArrows i {
+    position: absolute;
+    top: 50%;
+    font-size: 120px;
+    color: rgba(255, 220, 209, 0.5);
+    transform: translateY(-50%);
+}
+
+.mainVisual .slideArrows i:first-child {
+    left: 50px;
+}
+.mainVisual .slideArrows i:last-child {
+    right: 50px;
+}

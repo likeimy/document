@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 만들기 01</title>
+    <style>
+
+        @import url(//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css);
+        * {margin: 0; box-sizing: border-box;}
+        body {line-height: 1;}
+
+
+        .ba {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        /* even : 하니씩 건너 뜀 */
+        .ba:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        /* html에는 없지만 웹에는 생긴다. 하지만 드래그를 해서 긁을 수 없다. */
+        .bas01 h2::before {
+            content: "before 자리";
+        }
+
+        .bas01 h2::after {
+            content: "after 자리";
+        }
+
+        .bas02 h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: #369;
+            border-radius: 20px 0;
+            margin: 15px auto;
+        }
+
+        .bas03 h2::before {
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            background: #369;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .bas03 h2::after {
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            background: #369;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .bas04 li::before {
+            content: "\e95e"; /*xeicon유니코드*/
+            font-family: xeicon!important;
+            display: inline-block;
+            vertical-align: middle;
+            color: aquamarine;
+            margin-right: 10px;
+        }
+
+        .bas05 p {
+            margin-bottom: 30px;
+        }
+
+        .bas05 .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bas05 .container figure {
+            position: relative;
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .bas05 img {
+            width: 100%;
+        }
+
+        .bas05 .container figure::after {
+            content: attr(data-num);
+
+            position: absolute;
+            top: -10px;
+            left: -10px;
+
+            width: 60px;
+            height: 60px;
+
+            background: aqua;
+            color: #fff;
+            font-size: 30px;
+            line-height: 60px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- .ba.bas0$*5 : 클래스를 만들고 그안에 0~05번까지의 클래스를 만들어라. -->
+    <!-- .ba.bas0$*5>h2{LOREM} -->
+    <div class="ba bas01">
+        <h2>LOREM</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et?</p>
+    </div>
+
+    <div class="ba bas02">
+        <h2>LOREM</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et?</p>
+    </div>
+
+    <div class="ba bas03">
+        <h2>LOREM</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et?</p>
+    </div>
+
+    <div class="ba bas04">
+        <h2>LOREM <i class="xi-emoticon-smiley-o"></i></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et?</p>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita provident libero inventore aperiam! Dolores.</li>
+    </div>
+
+    <div class="ba bas05">
+        <h2>LOREM</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, et?</p>
+        <div class="container">
+            <figure data-num="01">
+                <img src="../images/lesedilarona01.jpg" alt="">
+            </figure>
+            <figure data-num="02">
+                <img src="../images/lesedilarona02.jpg" alt="">
+            </figure>
+            <figure data-num="03">
+                <img src="../images/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </div>
+
+</body>
+</html>
