@@ -1,0 +1,130 @@
+.Wrap {}
+
+/* topBanner */
+.topBanner {
+    padding: 15px 0 10px 0;
+    background: rgb(1, 144, 75);
+    color: #fff;
+    text-align: center;
+}
+
+.topBanner .container {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.topBanner .container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+}
+
+.topBanner .container p {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.topBanner .container a {
+    margin-left: 23px;
+    padding: 4px 16px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.topBanner .container i {
+    margin-top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* headerWrap */
+.headerWrap {
+    background: rgb(59, 112, 86);
+    color: #fff;
+}
+
+.headerWrap .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+.headerWrap .container>* {
+    padding: 0 15px;
+}
+
+.headerWrap .container img {
+    width: 110px;
+}
+
+.headerWrap .loginform {
+    margin-left: auto;
+}
+
+.gnb {}
+
+.gnb ul {
+    display: flex;
+}
+
+.gnb ul li {
+    position: relative;
+    padding: 0 20px;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.gnb ul li~li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 2px;
+    height: 13px;
+    background: #f2f2f2;
+}
+
+.headerWrap .loginform input[type="text"] {
+    padding: 3px 10px;
+    outline: none;
+    border: none;
+    width: 100px;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+}
+
+.headerWrap .loginform input[type="text"]::placeholder {
+    color: #fff;
+}
+
+.headerWrap .loginform input[type="text"]:focus::placeholder {
+    color: transparent;
+} /* 아이디 글자 사라지게 하는 법 */
+
+.headerWrap .loginform input[type="password"] {
+    padding: 3px 10px;
+    outline: none;
+    border: none;
+    width: 100px;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+}
+
+.headerWrap .loginform input[type="password"]::placeholder {
+    color: #fff;
+}
+
+.headerWrap .loginform input[type="password"]:focus::placeholder {
+    color: transparent;
+}
