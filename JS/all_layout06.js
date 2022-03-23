@@ -37,21 +37,20 @@ $(function(){
         autoPlay:true, 
         mute:true, 
         showControls:false,
-    })
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+    });
+
+    $('.btn i:nth-of-type(1)').on('click', function () {
+        $('#bgndVideo').YTPPause()
+    });
+   // <button onclick="jQuery('#[playerID]').YTPPause()">pause</button>
+
+
+   $('.btn i:nth-of-type(2)').on('click', function () {
+    $('#bgndVideo').YTPPlay()
+});
+    //<button onclick="jQuery('#[playerID]').YTPPlay()">play</button>
+
+
 
     $('.eProductSlide').slick({
         arrows: false,
@@ -95,5 +94,35 @@ $(function(){
         $('tabConten>div').eq(idx).addClass('xx').siblings().removeClass('xx')
     });
 
+    $('#link').on('change', function () {
+        let linksite = $(this).val();
+        if (!linksite) return; //!:부정의 이미 여기서는 링크사이트의 값이 없다면이라는 뜻
+        window.open(linksite)
+    });
+
+    $('.popup01 button').on('click', function () {
+        $(this).parent().hide();
+    });
+
+
+    $('.toTop').on('click', function () {
+        $('html, body').animate({
+            scrollTop:0
+        },500);
+        return false;
+    });
+
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        console.log(sct);
+        if (sct > 500) {
+            $('.toTop').fadeIn(1000);
+        }
+        else {
+            $('.toTop').fadeOut(1000);
+        }
+    });
+
     //////
 })
+
