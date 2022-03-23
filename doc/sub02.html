@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본으로 돌아가기 02</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <style>
+        .Wrap {}
+        
+        header, footer {
+            height: 200px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .article {
+            min-height: 500px;
+            letter-spacing: -0.025em;
+        }
+
+        .subPage .information {
+            padding: 100px 0;
+        }
+
+        .subPage .information h2 {
+            font-size: 35px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subPage .information h2::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #333;
+            margin: 15px auto;
+        }
+
+        .subPage .information>p {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .subPage .information .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subPage .information .container figure {
+            width: 100%;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
+        .subPage .information .container .left {
+            width: 35%;
+            padding: 0 15px;
+        }
+
+        .subPage .information .container .left h3 {
+            text-align: center;
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .subPage .information .container .left h3::after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 150px;
+            background: #f1f1f1;
+            margin: 30px auto;
+        }
+
+        .subPage .information .container .right {
+            width: 65%;
+            padding: 0 15px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* strong은 인라인이라 좌우만 마진을 먹기때문에 박스로 만들어줘야함 */
+        .subPage .information .container .right strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="Wrap">
+    
+    <header>
+        이건 머리얌
+    </header>
+
+
+    <article class="subPage">
+        <section class="information">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum assumenda deleniti cupiditate incidunt eveniet.</p>
+    
+            <div class="container">
+                <figure>
+                    <img src="../images/mainvisual03.jpg" alt="">
+                </figure>
+    
+                <div class="left">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                        Officiis facere provident culpa sequi.
+                    </h3>
+                </div>
+    
+                <div class="right">
+                    <p>
+                        <strong>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                            Beatae, tempore dolores necessitatibus sunt fugit soluta ipsam, culpa dicta laudantium doloribus, 
+                        </strong>
+    
+                        iure libero ad error quisquam nemo quod voluptates perspiciatis! <br>
+                        Architecto aliquam id incidunt fugiat aut reiciendis atque! Quisquam errorullam odio, aliquid ratione dolores exercitationem rem, illo maxime quam suscipit. <br><br>
+
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis cumque adipisci necessitatibus tenetur in neque. <br><br>
+                        <strong>
+                            Molestias optio consequuntur tempora neque dolores?
+                        </strong>
+                    </p>
+                </div>
+            </div>
+    
+        </section>
+    </article>
+
+
+
+    <footer>
+        &copy; lee. 
+    </footer>
+
+</div>
+</body>
+</html>

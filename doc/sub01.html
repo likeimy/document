@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본으로 돌아가기 01</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <style>
+        .Wrap {}
+        
+        header, footer {
+            height: 200px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        article {
+            min-height: 500px;
+            letter-spacing: -0.025em;
+        }
+
+        .subPage .greeting {
+            padding: 100px 0;
+        }
+
+        .subPage .greeting h2 {
+            font-size: 43px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subPage .greeting h2 span {
+            color: #0d6efd;
+        }
+
+        .subPage .greeting h2::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #343a40;
+            margin: 15px auto;
+        }
+
+        /* 손자 제외 자식만 잡을 때 '>' */
+        .subPage .greeting>p {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+
+        .subPage .greeting .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subPage .greeting .container>div {
+            width: 60%;
+            padding: 0 15px;
+        }
+
+        .subPage .greeting .container>figure {
+            width: 40%;
+            padding: 0 15px;
+        }
+
+        .subPage .ceogreeting h3 {
+            font-size: 23px;
+            margin-bottom: 50px;
+            line-height: 1.4;
+        }
+
+        .subPage .ceogreeting h3 span {
+            color: #0d6efd;
+            font-weight: 400;
+        }
+
+        .subPage .ceogreeting p {
+            line-height: 1.3;
+        }
+
+        .subPage .ceogreeting strong {
+            font-weight: 700;
+        }
+
+        .subPage .info {
+            padding: 100px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .subPage .info .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subPage .info h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .subPage .info h3::before {
+            content: "";
+            display: inline-block;
+            width: 3px;
+            height: 17px;
+            background: #0d6efd;
+            margin-right: 10px;
+            font-weight: 100;
+        }
+
+        .subPage .info .infotable {
+            width: 100%;
+            border-top: 2px solid #333;
+            border-bottom: 2px solid #333;
+            border-collapse: collapse;
+        }
+
+        .subPage .info .infotable td,
+        .subPage .info .infotable th {
+            padding: 15px 10px;
+            border-bottom: 1px solid #999;
+            text-align: left;
+        }
+
+        .subPage .info .infotable th {
+            font-weight: 900;
+            background: #f2f2f2;
+        }
+
+        .subPage .info .infotable th~th {
+            border-left: 1px solid #999;
+        }
+
+        .subPage .info .infotable td~td {
+            border-left: 1px solid #999;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="Wrap">
+    
+    <header>
+       이건 머리얌 
+    </header>
+
+
+    <article class="subPage">
+        <section class="greeting">
+            <h2><span>CEO'S</span> GREETING</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            <div class="container">
+                <div class="ceogreeting">
+                    <h3>
+                        웹서비스의 <span>새로운미래</span><br>
+                        <span>다온테마</span>가 만들어가겠습니다.
+                    </h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                        Debitis at, quod doloremque earum sit minima officia sint similique ipsa, corporis soluta nihil eaque cupiditate quaerat? <br><br>
+                        Accusamus qui nisi soluta possimus fuga tempore dicta nulla provident distinctio praesentium. <br>
+                        Nostrum aut voluptate maiores perferendis corrupti labore, doloribus vero laborum praesentium deserunt animi. <br><br>
+                        Dolor quaerat non nisi eos velit tempora nesciunt. Voluptatibus, hic. <br><br><br>
+                        Lorem ipsum, dolor sit amet consectetur <strong>adipisicing elit.</strong>
+                    </p>
+                </div>
+                <figure>
+                    <img src="../img/하울05.jpg" alt="">
+                </figure>
+            </div>
+        </section>
+
+        <section class="info">
+            <div class="container">
+                <h3>주요현황</h3>
+                <table class="infotable"> <!-- 가로 한줄태그 : tr -->
+                    <thead>
+                        <tr>
+                            <th>1000</th>
+                            <th>2000</th>
+                            <th>3000</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>2000</td>
+                            <td>3000</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>2000</td>
+                            <td>3000</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+    </article>
+
+
+
+    <footer>
+       &copy; lee. 
+    </footer>
+
+</div>
+</body>
+</html>
