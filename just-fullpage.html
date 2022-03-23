@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./CSS/fullpage.min.css">
+    <style>
+        .yunju {
+            text-align: center;
+            font-size: 130px;
+        }
+
+        .section h3 {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        .section.on h3 {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 1s;
+        }
+</style>
+</head>
+
+
+
+<body>
+    <div class="yunju">
+        <div class="section">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+        </div>
+        <div class="section">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+        </div>
+        <div class="section">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+        </div>
+        <div class="section">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+        </div>
+        <div class="section">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+        </div>
+    </div>
+
+</body>
+
+
+
+<script src="./JS/jquery-1.12.4.min.js"></script>
+<script src="./JS/fullpage.min.js"></script>
+<script>
+    $(function () {
+        $('.yunju').fullpage({
+            navigation: true,
+            afterLoad: function (o,d,c) {
+                console.log(d.index);
+                $('.section').eq(d.index).addClass('on').siblings().removeClass('on');
+            }
+        });
+});
+
+</script>
+</html>

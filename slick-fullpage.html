@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/common.css">
+    <link rel="stylesheet" href="./CSS/slick.css">
+    <style>
+        .slick-item {
+            height: 100vh !important;
+            top: 50vh;
+            text-align: center;
+            font-size: 200px;
+        }
+
+        .slick-item:nth-child(even) {
+            background: #333;
+            color: #fff;
+        }
+
+        .slick-item>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <section class="slick-fullpage">
+        <div class="slick-mom">
+            <div class="slick-item slick-item01">A</div>
+            <div class="slick-item slick-item02">B</div>
+            <div class="slick-item slick-item03">C</div>
+            <div class="slick-item slick-item04">D</div>
+            <div class="slick-item slick-item05">E</div>
+        </div>
+    </section>
+</body>
+<script src="./JS/jquery-1.12.4.min.js"></script>
+<script src="./JS/slick.min.js"></script>
+<script>
+    $(function () {
+        $('.slick-mom').slick ({
+            arrows: false,
+            vertical: true,
+        });
+
+        $(window).on('wheel', function (e) {
+            let wd = e.originalEvent.wheelDelta;
+            if(wd<0) {$('.slick-mom').slick('slickNext');}
+            else {$('.slick-mom').slick('slickPrev');}
+        })
+    })
+</script>
+</html>
