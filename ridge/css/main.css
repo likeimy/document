@@ -1,0 +1,139 @@
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: black;}
+img {display: block;}
+
+/*---------------------------------Header-------------------------------------*/
+
+.outerHeader {
+    width: 100%;
+}
+
+.innerHeader {
+    width: 1030px;
+    margin: 0 auto;
+}
+
+.innerHeader .navBox {
+    width: 100%;
+}
+
+.innerHeader .navBox .brand {
+    float: left;
+}
+
+.innerHeader .navBox .gnb {
+    float: right;
+}
+
+.innerHeader .navBox .gnb ul {
+    font-size: 0;
+}
+
+.innerHeader .navBox .gnb li {
+    display: inline-block;
+    font-size: 11px;
+    border-right: 1px solid black;
+    padding: 0 8px;
+    line-height: 11px; /* border의 높이를 줄이고 싶을 땐 line-height으로 조절가능 */
+}
+
+.innerHeader .navBox li:last-child {border: none;}
+
+.innerHeader .logoBox {
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+
+.innerHeader .logoBox .logo {
+    width: 200px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.innerHeader .logoBox .search {
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+.lnbBox {
+    width: 100%;
+    height: 30px;
+    background-color: #1d2d51;
+}
+
+.lnbBox .lnb {
+    width: 1030px;
+    margin: 0 auto;
+}
+
+.lnbBox .lnb li {
+    display: inline-block;
+    color: white;
+    line-height: 30px;
+    padding: 0 25px;
+}
+
+
+
+
+/*-------------------------------------wrap---------------------------------------*/
+
+.wrap {
+    width: 1030px;
+    margin: 0 auto;
+}
+
+
+/*------------------------------------visualmain-------------------------------------*/
+
+.visualMain {
+    width: 100%;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.visualMain .visual_left {
+    width: 700px;
+    height: 530px;
+    float: left;
+    margin-right: 15px;
+}
+
+.visualMain .visual_left img {
+    width: 100%;
+    height: auto;
+}
+
+.visualMain .visual_right {
+    width: 315px;
+    height: 530px;
+    float: left;
+}
+
+.visualMain .visual_right .visual_right_top {
+    margin-bottom: 15px;
+}
+
+.titleBox {
+    width: 100%;
+    overflow: hidden;
+}
+
+.titleBox .bar {
+    width: 400px;
+    height: 50px;
+    float: left;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+.titleBox .title {
+    width: 230px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
